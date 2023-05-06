@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(27,155,17);
+    background: linear-gradient(145deg, rgba(27,155,17,1) 49%, rgba(44,230,30,1) 100%);
+    background-repeat: round;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+}
+
+.logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.logo h1::after{
+    content: 'Beta';
+    font-style: italic;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: medium;
+    position: relative;
+    top: -15px;
+}
+
+.text {
+    text-align: right;
+}
+
+.text h1 {
+    font-weight: 300;
+    font-size: 3rem;
+}
+
+.center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 5px;
+    width: 75%;
+}
+
+.list p {
+    font-size: 24px;
+}
+
+.list p:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.list h1 {
+    font-weight: 300;
+}
+
+h1 a {
+    text-decoration: underline 1px;
+    color: white;
+}
+
+h1 a:hover {
+    color: gray;
+}
+
+@media screen and (max-width: 320px) {
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .logo h1::after{
+        content: '';
+    }
+    .logo p::before{
+        content: 'Alpha';
+        content: 'Alpha';
+        font-style: italic;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: medium;
+        position: relative;
+        right: 130px;
+    }
+}

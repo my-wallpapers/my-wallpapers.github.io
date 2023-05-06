@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>My wallpapers</title>
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="icons/favicon.ico">
+    </head>
+    <body>
+        <div class="content">
+            <div class="logo">
+                <div class="text">
+                    <h1>My wallpapers</h1>
+                    <p>by Muralmaks IT</p>
+                </div>
+            </div>
+            <div class="center">
+                <div class="list" style="display: flex; align-items: center; justify-content: center;">
+                    <div style="display: block;">
+                    <h1>My wallpapers - сайт, где хранятся оригинальные обои Windows, обои с интернета, собственные обои, и всё это в высоком качестве! (почти)</h1>
+                    <hr>
+                    <p onclick="commentfix('y')"><img src="icons/imageres_163-5.png" width="20px"> YouTube канал</p>
+                    <hr>
+                    <p onclick="commentfix('d')"><img src="icons/imageres_163-5.png" width="20px"> Discord сервер</p>
+                    <hr>
+                    <p onclick="commentfix('g')"><img src="icons/imageres_163-5.png" width="20px"> Мой Github</p>
+                    <hr>
+                    <p onclick="window.location.href = 'index.html';"><img src="icons/imageres_185-7.png" width="20px"> Back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        function commentfix(link){
+            if(link == 'y'){
+                window.location.href = 'https://youtube.com/@muralmaksit';
+            } else if (link == 'd'){
+                window.location.href = 'https://discord.gg/4MK4hhFZsX';
+            } else if (link == 'g'){
+                window.location.href = 'https://github.com/PatrickStar8753';
+            }
+        }
+    </script>
+</html>
