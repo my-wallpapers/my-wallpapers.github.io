@@ -78,7 +78,7 @@ h1 a:hover {
     color: gray;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
     .logo {
         width: 100%;
         display: flex;
@@ -96,5 +96,8 @@ h1 a:hover {
         font-size: medium;
         position: relative;
         right: 130px;
+    }
+    .list {
+        width: 95%;
     }
 }
