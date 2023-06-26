@@ -24,14 +24,6 @@ body {
     margin-bottom: 25px;
 }
 
-.logo h1::after{
-    content: 'Beta';
-    font-style: italic;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: medium;
-    position: relative;
-    top: -15px;
-}
 
 .text {
     text-align: right;
@@ -85,17 +77,6 @@ h1 a:hover {
         justify-content: center;
         align-items: center;
         margin-bottom: 25px;
-    }
-    .logo h1::after{
-        content: '';
-    }
-    .logo p::before{
-        content: 'Beta';
-        font-style: italic;
-        font-family: 'Segoe UI', sans-serif;
-        font-size: medium;
-        position: relative;
-        right: 130px;
     }
     .list {
         width: 95%;
