@@ -70,7 +70,7 @@ h1 a:hover {
     color: gray;
 }
 
-@media screen and (max-width: 425px) {
+/* @media screen and (max-width: 425px) {
     .logo {
         width: 100%;
         display: flex;
@@ -80,5 +80,50 @@ h1 a:hover {
     }
     .list {
         width: 95%;
+    }
+}
+Если что-то пойдёт не так.
+*/
+
+@media screen and (max-width: 768px) {
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+    .logo p::before{
+        content: 'Mobile (beta)';
+        font-style: italic;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: medium;
+        position: relative;
+        right: 77px;
+    }
+
+    .list {
+        width: 95%;
+    }
+
+    .list p {
+        display: grid;
+        justify-items: center;
+        padding: 10px 0px;
+    }
+
+    .list p img {
+        width: 40px;
+        padding: 10px 0px;
+    }
+
+}
+
+@media screen and (max-width: 286px) {
+    .logo h1{
+        font-size: 43px;
+    }
+    .logo p::before{
+        right: 48px;
     }
 }
