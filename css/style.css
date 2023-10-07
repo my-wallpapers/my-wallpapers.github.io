@@ -85,45 +85,46 @@ h1 a:hover {
 Если что-то пойдёт не так.
 */
 
-@media screen and (max-width: 768px) {
-    .logo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 25px;
-    }
-    .logo p::before{
-        content: 'Mobile (beta)';
-        font-style: italic;
-        font-family: 'Segoe UI', sans-serif;
-        font-size: medium;
-        position: relative;
-        right: 77px;
-    }
+.mobile .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
 
-    .list {
-        width: 95%;
-    }
+.mobile .logo h1::after{
+    content: '';
+}
+.mobile .logo p::before{
+    content: 'Mobile (beta)';
+    font-style: italic;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: medium;
+    position: relative;
+    right: 77px;
+}
 
-    .list p {
-        display: grid;
-        justify-items: center;
-        padding: 10px 0px;
-    }
+.mobile .list {
+    width: 95%;
+}
 
-    .list p img {
-        width: 40px;
-        padding: 10px 0px;
-    }
+.mobile .list p {
+    display: grid;
+    justify-items: center;
+    padding: 10px 0px;
+}
 
+.mobile .list p img {
+    width: 40px;
+    padding: 10px 0px;
 }
 
 @media screen and (max-width: 286px) {
-    .logo h1{
+    .mobile .logo h1{
         font-size: 43px;
     }
-    .logo p::before{
+    .mobile .logo p::before{
         right: 48px;
     }
 }
