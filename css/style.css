@@ -6,7 +6,10 @@
 
 body {
     background: linear-gradient(145deg, rgba(20,116,13,1) 49%, rgba(33,173,23,1) 100%);
-    background-size: auto clamp(1920px, 100%, 1080px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
     font-family: 'Segoe UI', sans-serif;
 }
 
@@ -70,21 +73,6 @@ h1 a:hover {
     color: gray;
 }
 
-/* @media screen and (max-width: 425px) {
-    .logo {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 25px;
-    }
-    .list {
-        width: 95%;
-    }
-}
-Если что-то пойдёт не так.
-*/
-
 .mobile .logo {
     width: 100%;
     display: flex;
@@ -92,7 +80,7 @@ h1 a:hover {
     align-items: center;
     margin-bottom: 25px;
 }
-
+/*
 .mobile .logo h1::after{
     content: '';
 }
@@ -103,7 +91,7 @@ h1 a:hover {
     font-size: medium;
     position: relative;
     right: 77px;
-}
+} */
 
 .mobile .list {
     width: 95%;
