@@ -1,5 +1,5 @@
 var usragent = navigator.userAgent.toLowerCase();
-var ismobile = usragent.indexOf("mobile") > -1;
+var ismobile = usragent.indexOf("mobile") > -1 || usragent.indexOf("android") > -1;
 if(ismobile) {
     document.querySelector('body').classList.add('mobile');
 
