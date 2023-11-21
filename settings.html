@@ -60,16 +60,16 @@
     <script>
 
         switch (localStorage.getItem('theme')) {
-            case 'css/style.css':
+            case 'https://my-wallpapers.github.io/css/style.css':
                 settings('default');
             break;
-            case 'css/console.css':
+            case 'https://my-wallpapers.github.io/css/console.css':
                 settings('console');
             break;
-            case 'css/malwarewatch.css':
+            case 'https://my-wallpapers.github.io/css/malwarewatch.css':
                 settings('malwarewatch');
             break;
-            case 'css/discord.css':
+            case 'https://my-wallpapers.github.io/css/discord.css':
                 settings('discord');
             break;
             default:
@@ -81,8 +81,8 @@
             switch (name){
                 case 'default':
                     if (!(document.querySelectorAll('p')[1].classList.contains('selected'))) {
-                        document.querySelector('link[rel="stylesheet"]').href = 'css/style.css';
-                        localStorage.setItem('theme', 'css/style.css');
+                        document.querySelector('link[rel="stylesheet"]').href = 'https://my-wallpapers.github.io/css/style.css';
+                        localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/style.css');
                         document.querySelectorAll('p').forEach(function(p){
                             if (!(p.textContent == 'Selected text')){
                                 p.classList.remove('selected');
@@ -93,8 +93,8 @@
                 break;
                 case 'console':
                 if (!(document.querySelectorAll('p')[2].classList.contains('selected'))) {
-                        document.querySelector('link[rel="stylesheet"]').href = 'css/console.css';
-                        localStorage.setItem('theme', 'css/console.css');
+                        document.querySelector('link[rel="stylesheet"]').href = 'https://my-wallpapers.github.io/css/console.css';
+                        localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/console.css');
                         document.querySelectorAll('p').forEach(function(p){
                             if (!(p.textContent == 'Selected text')){
                                 p.classList.remove('selected');
@@ -105,8 +105,8 @@
                 break;
                 case 'discord':
                 if (!(document.querySelectorAll('p')[3].classList.contains('selected'))) {
-                        document.querySelector('link[rel="stylesheet"]').href = 'css/discord.css';
-                        localStorage.setItem('theme', 'css/discord.css');
+                        document.querySelector('link[rel="stylesheet"]').href = 'https://my-wallpapers.github.io/css/discord.css';
+                        localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/discord.css');
                         document.querySelectorAll('p').forEach(function(p){
                             if (!(p.textContent == 'Selected text')){
                                 p.classList.remove('selected');
@@ -117,8 +117,8 @@
                 break;
                 case 'malwarewatch':
                 if (!(document.querySelectorAll('p')[4].classList.contains('selected'))) {
-                        document.querySelector('link[rel="stylesheet"]').href = 'css/malwarewatch.css';
-                        localStorage.setItem('theme', 'css/malwarewatch.css');
+                        document.querySelector('link[rel="stylesheet"]').href = 'https://my-wallpapers.github.io/css/malwarewatch.css';
+                        localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/malwarewatch.css');
                         document.querySelectorAll('p').forEach(function(p){
                             if (!(p.textContent == 'Selected text')){
                                 p.classList.remove('selected');
