@@ -5,9 +5,9 @@
 try {
     localStorage.getItem('theme');
 } catch (e) {
-    localStorage.setItem('theme', 'css/style.css');
+    localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/style.css');
 }
-if(!(localStorage.getItem('theme') === 'css/style.css')){
+if(!(localStorage.getItem('theme') === 'https://my-wallpapers.github.io/css/style.css')){
     document.querySelector('link[rel="stylesheet"]').href = localStorage.getItem('theme');
 }
 
