@@ -1,0 +1,146 @@
+<html>
+    <head>
+        <title>My wallpapers</title>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/mobile.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="icons/favicon.ico">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="My Wallpapers settings">
+        <meta property="og:description" content="Сайт с обоями.">
+        <meta property="og:url" content="https://my-wallpapers.github.io/settings.html">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:image" content="https://my-wallpapers.github.io/icons/imageres_113-1.png">
+        <meta property="og:image:width" content="256">
+        <meta property="og:image:height" content="256">
+    </head>
+    <body>
+        <div class="content">
+            <div class="logo">
+                <div class="text">
+                    <h1>My wallpapers</h1>
+                    <p>by Muralmaks IT</p>
+                </div>
+            </div>
+            <div class="center">
+                <div class="list">
+                    <div>
+                        <h1>Settings (beta)</h1>
+                        <hr>
+                        <h2>Theme:</h2>
+                        <p onclick="settings('default')" class="selected">Default</p>
+                        <p onclick="settings('console')">Console</p>
+                        <p onclick="settings('discord')">Discord (similar?)</p>
+                        <p onclick="settings('malwarewatch')">MalwareWatch</p>
+                        <hr>
+                        <div class="preview">
+                            <div class="logo"><div class="text"><h1>My wallpapers</h1></div></div>
+                            <div class="center">
+                                <div class="list">
+                                    <div>
+                                        <p><img src="icons/imageres_113-7.png" width="20px"> Text with icon</p>
+                                        <p class="selected">Selected text</p>
+                                        <hr>
+                                        <h1>Big text</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <h2>Custom theme (link to css file):</h2>
+                        <input id="input" placeholder="https://link.com/style.css"><button onclick="settings('custom')">OK</button>
+                        <p onclick="download()">Download the css file preset</p>
+                        <hr>
+                        <p onclick="window.location.href = 'info.html';"><img src="icons/imageres_185-7.png" width="20px"> Back</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+        switch (localStorage.getItem('theme')) {
+            case 'css/style.css':
+                settings('default');
+            break;
+            case 'css/console.css':
+                settings('console');
+            break;
+            case 'css/malwarewatch.css':
+                settings('malwarewatch');
+            break;
+            case 'css/discord.css':
+                settings('discord');
+            break;
+            default:
+                settings('custom');
+            break;
+        }
+
+        function settings(name){
+            switch (name){
+                case 'default':
+                    if (!(document.querySelectorAll('p')[1].classList.contains('selected'))) {
+                        document.querySelector('link[rel="stylesheet"]').href = 'css/style.css';
+                        localStorage.setItem('theme', 'css/style.css');
+                        document.querySelectorAll('p').forEach(function(p){
+                            if (!(p.textContent == 'Selected text')){
+                                p.classList.remove('selected');
+                            }
+                        })
+                        document.querySelectorAll('p')[1].classList.add('selected');
+                    }
+                break;
+                case 'console':
+                if (!(document.querySelectorAll('p')[2].classList.contains('selected'))) {
+                        document.querySelector('link[rel="stylesheet"]').href = 'css/console.css';
+                        localStorage.setItem('theme', 'css/console.css');
+                        document.querySelectorAll('p').forEach(function(p){
+                            if (!(p.textContent == 'Selected text')){
+                                p.classList.remove('selected');
+                            }
+                        })
+                        document.querySelectorAll('p')[2].classList.add('selected');
+                    }
+                break;
+                case 'discord':
+                if (!(document.querySelectorAll('p')[3].classList.contains('selected'))) {
+                        document.querySelector('link[rel="stylesheet"]').href = 'css/discord.css';
+                        localStorage.setItem('theme', 'css/discord.css');
+                        document.querySelectorAll('p').forEach(function(p){
+                            if (!(p.textContent == 'Selected text')){
+                                p.classList.remove('selected');
+                            }
+                        })
+                        document.querySelectorAll('p')[3].classList.add('selected');
+                    }
+                break;
+                case 'malwarewatch':
+                if (!(document.querySelectorAll('p')[4].classList.contains('selected'))) {
+                        document.querySelector('link[rel="stylesheet"]').href = 'css/malwarewatch.css';
+                        localStorage.setItem('theme', 'css/malwarewatch.css');
+                        document.querySelectorAll('p').forEach(function(p){
+                            if (!(p.textContent == 'Selected text')){
+                                p.classList.remove('selected');
+                            }
+                        })
+                        document.querySelectorAll('p')[4].classList.add('selected');
+                    }
+                break;
+                case 'custom':
+                        document.querySelector('link[rel="stylesheet"]').href = document.getElementById('input').value;
+                        localStorage.setItem('theme', document.getElementById('input').value);
+                        document.querySelectorAll('p').forEach(function(p){
+                            if (!(p.textContent == 'Selected text')){
+                                p.classList.remove('selected');
+                            }
+                        })
+                break;
+            }
+        }
+
+        function download(){
+            window.location.href = 'https://cdn.discordapp.com/attachments/834351544203608094/1176488861455622306/preset.css?ex=656f0da2&is=655c98a2&hm=999606532bf18a2f2fab1bbebf50de071926bf051a07e221ca3bda329e8671a8&';
+        }
+    </script>
+</html>

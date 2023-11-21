@@ -64,13 +64,9 @@ body {
     font-weight: 300;
 }
 
-h1 a {
-    text-decoration: underline 1px;
-    color: white;
-}
-
-h1 a:hover {
-    color: gray;
+.list h2 {
+    font-weight: 400;
+    font-size: 27px;
 }
 
 .mobile .logo {
@@ -80,18 +76,6 @@ h1 a:hover {
     align-items: center;
     margin-bottom: 25px;
 }
-/*
-.mobile .logo h1::after{
-    content: '';
-}
-.mobile .logo p::before{
-    content: 'Mobile (beta)';
-    font-style: italic;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: medium;
-    position: relative;
-    right: 77px;
-} */
 
 .mobile .list {
     width: 95%;
@@ -115,4 +99,13 @@ h1 a:hover {
     .mobile .logo p::before{
         right: 48px;
     }
+}
+
+.preview {
+    background: linear-gradient(145deg, rgba(20,116,13,1) 49%, rgba(33,173,23,1) 100%);
+    background-size: cover;
+}
+
+.selected {
+    background-color: rgba(255, 255, 255, 0.514);
 }

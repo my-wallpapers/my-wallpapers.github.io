@@ -2,8 +2,17 @@
     <head>
         <title>My wallpapers</title>
         <link rel="stylesheet" href="css/style.css">
+        <script src="js/mobile.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="icons/favicon.ico">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="My Wallpapers information">
+        <meta property="og:description" content="Сайт с обоями.">
+        <meta property="og:url" content="https://my-wallpapers.github.io/info.html">
+        <meta property="og:locale" content="ru_RU">
+        <meta property="og:image" content="https://my-wallpapers.github.io/icons/imageres_113-1.png">
+        <meta property="og:image:width" content="256">
+        <meta property="og:image:height" content="256">
     </head>
     <body>
         <div class="content">
@@ -18,13 +27,17 @@
                     <div style="display: block;">
                     <h1>My wallpapers - сайт, где хранятся оригинальные обои Windows, обои с интернета, собственные обои, и всё это в высоком качестве! (почти)</h1>
                     <hr>
-                    <p onclick="commentfix('y')"><img src="icons/imageres_163-5.png" width="20px"> YouTube канал</p>
+                    <p onclick="window.location.href = 'https:/youtube.com/@muralmaksit';"><img src="icons/imageres_163-5.png" width="20px"> YouTube канал</p>
                     <hr>
-                    <p onclick="commentfix('d')"><img src="icons/imageres_163-5.png" width="20px"> Discord сервер</p>
+                    <p onclick="window.location.href = 'https:/discord.gg/4MK4hhFZsX';"><img src="icons/imageres_163-5.png" width="20px"> Discord сервер</p>
                     <hr>
-                    <p onclick="commentfix('g')"><img src="icons/imageres_163-5.png" width="20px"> Мой Github</p>
+                    <p onclick="window.location.href = 'https:/github.com/PatrickStar8753';"><img src="icons/imageres_163-5.png" width="20px"> Мой Github</p>
                     <hr>
-                    <p onclick="commentfix('i')"><img src="icons/imageres_163-5.png" width="20px"> Нашли баг?</p>
+                    <p onclick="window.location.href = 'https:/github.com/my-wallpapers/my-wallpapers.github.io/issues';"><img src="icons/imageres_163-5.png" width="20px"> Нашли баг?</p>
+                    <hr>
+                    <p onclick="alert('linkmw')"><img src="icons/mw-6.png" width="20px"> MyWallpapersWallpaperInstaller.exe</p>
+                    <hr>
+                    <p onclick="window.location.href = 'settings.html'"><img src="icons/imageres_102-7.png" width="20px"> Settings.html</p>
                     <hr>
                     <p onclick="window.location.href = 'index.html';"><img src="icons/imageres_185-7.png" width="20px"> Back</p>
                     </div>
@@ -33,18 +46,6 @@
         </div>
     </body>
     <script>
-        function commentfix(link){
-            if(link == 'y'){
-                window.location.href = 'https://youtube.com/@muralmaksit';
-            } else if (link == 'd'){
-                window.location.href = 'https://discord.gg/4MK4hhFZsX';
-            } else if (link == 'g'){
-                window.location.href = 'https://github.com/PatrickStar8753';
-            } else if (link == 'i'){
-                window.location.href = 'https://github.com/my-wallpapers/my-wallpapers.github.io/issues';
-            }
-        }
-
         document.addEventListener('keypress', (event) => {
             const keyName = event.key;
             if (keyName === 'd'){
@@ -52,5 +53,4 @@
             }
         });
     </script>
-    <script src="js/mobile.js"></script>
 </html>

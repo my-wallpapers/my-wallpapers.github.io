@@ -1,21 +1,27 @@
+// Интересно, а в какой момент времени мобильный скрипт стал скриптом тем?)
+
+// Система тем
+try {
+    localStorage.getItem('theme');
+} catch (e) {
+    localStorage.setItem('theme', 'css/style.css');
+}
+if(!(localStorage.getItem('theme') === 'css/style.css')){
+    document.querySelector('link[rel="stylesheet"]').href = localStorage.getItem('theme');
+}
+
+// Система мобильного режима для пк
+try {
+    localStorage.getItem('mobilemode');
+} catch (e) {
+    localStorage.setItem('mobilemode', 'false');
+}
+
+// Система мобильного режима
 var usragent = navigator.userAgent.toLowerCase();
-var ismobile = usragent.indexOf("mobile") > -1 || usragent.indexOf("android") > -1;
+var ismobile = usragent.indexOf("mobile") > -1 || usragent.indexOf("android") > -1 || localStorage.getItem("mobilemode") == "true";
 if(ismobile) {
     document.querySelector('body').classList.add('mobile');
-
-    /* 
-    Muralmaks IT:
-    Привет! Я делаю мобильную адаптацию. Подскажи, что лучше сделать с иконками? У меня есть иконки разных размеров, 20x20 пикселей и 40x40. Как их лучше поместить на сайт?
-    1 вариант) поместить обе иконки в код HTML и скрывать одну из них, в зависимости от устройства.
-    2 вариант) менять ссылку на иконку у одного изображения с помощью JS, в зависимости от устройства.
-    Что лучше?
-
-    YandexGPT 2:
-    Привет! Лучше использовать второй вариант - менять ссылку на иконку у одного изображения с помощью JavaScript,
-    в зависимости от устройства. Это позволит оптимизировать загрузку ресурсов и улучшить производительность приложения.
-    (Не реклама.)
-    */
-
     document.querySelectorAll('img').forEach(function(el){
         switch (el.src.split('/')[el.src.split('/').length - 1]){
             case 'imageres_113-7.png':
@@ -32,6 +38,9 @@ if(ismobile) {
             break;
             case 'shell32_63008-7.png':
                 el.src = '/icons/shell32_63008-4.png';
+            break;
+            case 'mw-6.png':
+                el.src = '/icons/mw-3.png';
             break;
         }
     })
