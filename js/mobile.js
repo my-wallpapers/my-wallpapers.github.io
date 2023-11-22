@@ -46,10 +46,6 @@ if(ismobile) {
         }
     })
     if (window.location.href == 'https://my-wallpapers.github.io/info.html'){
-        document.querySelectorAll('p').forEach(function(p){
-            if (p.textContent == ' MyWallpapersWallpaperInstaller.exe'){
-                p.textContent = '<img src="icons/mw-6.png" width="20px"> MWWI.exe'
-            }
-        });
+        document.getElementById('mwwi').textContent = ' MWWI.exe'
     }
 }
