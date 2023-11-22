@@ -7,6 +7,10 @@ try {
 } catch (e) {
     localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/style.css');
 }
+// На всякий случай
+if(localStorage.getItem('theme') == null) {
+    localStorage.setItem('theme', 'https://my-wallpapers.github.io/css/style.css');
+}
 if(!(localStorage.getItem('theme') === 'https://my-wallpapers.github.io/css/style.css')){
     document.querySelector('link[rel="stylesheet"]').href = localStorage.getItem('theme');
 }
