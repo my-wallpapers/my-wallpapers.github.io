@@ -45,4 +45,11 @@ if(ismobile) {
             break;
         }
     })
+    if (window.location.href = 'https://my-wallpapers.github.io/info.html'){
+        document.querySelectorAll('p').forEach(function(p){
+            if (p.textContent == ' MyWallpapersWallpaperInstaller.exe'){
+                p.textContent = ' MWWI.exe'
+            }
+        });
+    }
 }
