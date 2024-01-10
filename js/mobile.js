@@ -53,3 +53,12 @@ if(ismobile) {
         document.getElementById('mwwi').textContent = ' MWWI.exe'
     }
 }
+if (!ismobile){
+    window.onresize = function(){
+        if(window.innerWidth <= 565){
+            document.getElementById('mwwi').textContent = ' MWWI.exe';
+        } else {
+            document.getElementById('mwwi').textContent = ' MyWallpapersWallpaperInstaller.exe';
+        };
+    }
+}
