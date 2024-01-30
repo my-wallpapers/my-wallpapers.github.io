@@ -2,12 +2,15 @@
     <head>
         <title>404</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="icons/faviconerr.ico">
     </head>
     <body>
+        <div class="all"></div>
+        <img class="bgimg" src="https://my-wallpapers.github.io/windows/original/windows-vista/Black%20and%20White/img3.jpg" onload="show()">
         <div class="bg"></div>
         <div class="content" style="display: block; text-align: center;">
-        <h1>404 - file not found!</h1>
-        <a href="/">Go back.</a>
+        <h1>404: object not found.</h1>
+        <a href="/">Back</a>
         </div>
     </body>
     <style>
@@ -17,7 +20,7 @@
         }
 
         body {
-            background: linear-gradient(0deg, rgba(27,155,17,1) 0%, rgba(14,79,9,1) 30%, rgba(0,0,0,1) 100%);
+            background-color: black;
             color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             display: flex;
@@ -28,14 +31,11 @@
         h1 {
             font-weight: 300;
             z-index: 1;
-            animation: text 500ms ease-out normal;
-            animation-iteration-count: 1;
             font-size: 50px;
         }
 
         .bg {
             background-color: black;
-            animation: bg 1500ms ease-out normal;
             animation-iteration-count: 1;
             z-index: -2;
             width: 100%;
@@ -43,32 +43,51 @@
             position: absolute;
             top: 0;
             left: 0;
-            filter: opacity(0);
+            filter: opacity(1);
+            backdrop-filter: blur(4px);
+        }
+    
+        .bgimg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -3;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
+        .all {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            background-color: black;
+            animation: fade 500ms linear forwards;
+        }
+
+        .animbg {
+            animation: bg 500ms linear normal forwards;
+        } 
 
         a {
             color: white;
             font-weight: 300;
             font-size: 20px;
             margin-top: 15px;
-            animation: fade 1s linear normal;
-            animation-iteration-count: 1;
+            cursor: pointer;
         }
 
         @keyframes bg {
             from {filter: opacity(1);}
-            to {filter: opacity(0);}
-        }
-
-        @keyframes text {
-            from {filter: opacity(0); transform: scale(0.1);}
-            to {filter: opacity(1); transform: scale(1);}
+            to {filter: opacity(0.7);}
         }
 
         @keyframes fade {
-            from {filter: opacity(0);}
-            to {filter: opacity(1);}
+            from {filter: opacity(1);}
+            to {filter: opacity(0);}
         }
 
         @media screen and (max-width: 420px) {
@@ -77,4 +96,13 @@
             }
         }
     </style>
+    <script>
+        setTimeout(function(){
+            document.querySelector('.all').remove();
+        }, 500)
+
+        function show(){
+            document.querySelector('.bg').classList.add('animbg');
+        }
+    </script>
 </html>
