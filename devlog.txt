@@ -19,4 +19,8 @@
 03.11.2023 Добавлены новые обои, сделанные мной.
 21.11.2023 MyWallpapersWallpaperInstaller.exe, обои Daniel Myslivets, Mine's channel, Windows Insider Program anniversary, мои обои и система тем. (Проще говоря, крупное обновление.)
 22.11.2023 Крупный багфикс
+10.01.2024 Обои JestarDevil, КрLHRgNC10LQgу00L/R оrRgNCw0YHQtdC9gNC10L
+30.01.2024 error
+24.02.2024 Добавлены обои Windows Server 2025
+01.05.2024 Принят реквест (добавлена пара обоев)
 (Были ещё и другие всякие мелкие изменения, которые я не писал или не помню когда это было)
