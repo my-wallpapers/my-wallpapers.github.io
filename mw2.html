@@ -1,71 +1,332 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>???</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1>My wallpapers V2</h1>
-        <hr>
-        <h3>Планы:</h3>
-        <ul>
-            <li>Переписать весь сайт.</li>
-            <li>Убрать некоторые костыли.</li>
-            <li>Сделать прикольные штуки.</li>
-            <li>Писать MWV2 на летних стримах.</li>
-            <li>Сделать всё по красоте.</li>
-        </ul>
-        <div>
-            <iframe width="900px" height="256px" src="https://enter-media.org/widgets/2206433/?title=Stream+starting+timer+transparent+back&layer1=&line=%D0%9D%D0%B0%D1%87%D0%BD%D1%83+%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%BE+%D1%87%D0%B5%D1%80%D0%B5%D0%B7&size1=6&color1=FFFFFF&font1=2101050&offset1=-120&line2=Numbers&size2=15.6&color2=FFFFFF&font2=2101050&offset2=50&line3=Text&size3=5&color3=FFFFFF&font3=2101050&offset3=200&css=2155108&month=Jun&day=1&year=2024&hour=24&min=00&countlang=ru&webm=2206434&dots=No&frame=1">Начну примерно 1 июня.</iframe>
-        </div>
-        <div>
-            <img src="icons/mywallpaperslogo2.png" width="400px">
+        <img id="wall">
+        <img id="wall2">
+        <div id="root">
+            <div class='logo'>
+                <div class='text'>
+                  <h1>My wallpapers</h1>
+                  <p>by Muralmaks IT</p>
+                </div>
+            </div>
+            <div class='content'>
+                <div class="explorer">
+                    <p class="path"><a href="/">root</a> / </p>
+                    <a class="imgfile"><img src="icons/imageres_113-7.png" alt="<DIR>"><img src="icons/imageres_113-4.png" alt="<DIR>" class="mobile"> From internet</a>
+                    <a class="imgfile"><img src="icons/imageres_113-7.png" alt="<DIR>"><img src="icons/imageres_113-4.png" alt="<DIR>" class="mobile"> My wallpapers</a>
+                    <a class="imgfile"><img src="icons/imageres_113-7.png" alt="<DIR>"><img src="icons/imageres_113-4.png" alt="<DIR>" class="mobile"> Windows</a>
+                    <a class="imgfile"><img src="icons/imageres_113-7.png" alt="<DIR>"><img src="icons/imageres_113-4.png" alt="<DIR>" class="mobile"> Youtubers</a>
+                </div>
+            </div>
         </div>
     </body>
     <style>
         * {
-            margin: 0;
-            padding: 0;
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          overflow-x: hidden;
+        }
+
+        #soon {
+            position: absolute;
+            z-index: 9999;
+            color: white;
+            font-size: 24px;
+            font-family: 'consolas', monospace;
+            user-select: none;
+            pointer-events: none;
         }
 
         body {
-            background-color: rgb(46, 46, 46);
-            color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-color: #161616;
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          background-position: center center;
+          background-size: cover;
         }
 
-        hr {
-            border-color: rgba(255, 255, 255, 0.301);
-            margin: 0 15px;
+        #root {
+            transition: 250ms;
         }
 
-        h1, h3 {
-            margin: 15px;
+        #wall, #wall2 {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            object-position: center center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 0;
+            transition: 250ms;
+            opacity: 0;
         }
 
-        ul {
-            margin: 35px;
+        #wall.show, #wall2.show {
+            opacity: 1;
         }
 
-        ul li {
-            margin: 5px;
+        #root.wallpaper {
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
         }
 
-        div {
+        .hide {
+          display: none;
+        }
+
+        .logo {
+            width: 100vw;
+            padding: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            margin-top: 30px;
+            user-select: none;
         }
 
-        iframe {
-            border: 0;
+        .logo .text {
+            text-align: right;
         }
 
-        @media screen and (max-width: 375px) {
-            img {
-                width: 300px !important;
+        .logo .text h1 {
+            font-size: 3rem;
+        }
+
+        .content {
+          width: 100vw;
+          min-height: calc(100vh - 125px);
+          display: flex;
+          align-items: start;
+          justify-content: center;
+          padding-top: 10px;
+        }
+
+        .explorer {
+          padding: 10px;
+          background-color: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(10px);
+          width: 75%;
+          margin-bottom: 10px;
+        }
+
+        .explorer p.path {
+          width: 100%;
+          padding: 5px;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          gap: 5px;
+        }
+
+        .explorer p.path a {
+          text-decoration: none;
+          color: white;
+        }
+
+        .explorer p.path a:hover {
+          text-decoration: underline;
+        }
+
+        .explorer p.path:not(a){
+          color: rgba(255, 255, 255, 0.2);
+          font-weight: 300;
+          user-select: none;
+        }
+
+        .explorer a:not(p.path a) {
+          display: block;
+          width: 100%;
+          padding: 5px 5px 5px 0;
+          color: white;
+          text-decoration: none;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+          display: flex;
+          align-items: center;
+          gap: 5px;
+        }
+
+        .explorer a {
+            cursor: pointer;
+        }
+
+        .explorer a:not(p.path a) img {
+          width: 20px;
+        }
+
+        .explorer a:not(p.path a) img.mobile {
+          width: 40px;
+          display: none;
+        }
+
+        .explorer a:not(p.path a):hover {
+          background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        @media screen and (max-width: 700px){
+        
+          .logo .text h1 {
+            font-size: 2.5rem;
+          }
+
+          .explorer a:not(p.path a) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          }
+      
+          .explorer a:not(p.path a) img.mobile {
+            width: 40px;
+            display: block;
+          }
+      
+          .explorer a:not(p.path a) img {
+            display: none;
+          }
+        }
+
+        .drop0 {
+            animation: drop0 750ms forwards linear;
+        }
+
+        .drop1 {
+            animation: drop1 750ms forwards ;
+        }
+
+        .drop2 {
+            animation: drop2 750ms forwards ;
+        }
+
+        @keyframes drop0 {
+            0% {
+              transform: translateY(0) translateX(0);
+            }
+            10% {
+              transform: translateY(-25px) translateX(10px);
+            }
+            20% {
+              transform: translateY(-50px) translateX(20px) rotate(5deg);
+              opacity: 0.5;
+            }
+            30% {
+              transform: translateY(-60px) translateX(30px) rotate(5deg);
+            }
+
+            50% {
+                transform: translateY(-60px) translateX(35px) rotate(0deg);
+            }
+
+            100% {
+              transform: translateY(100%) translateX(40px);
+              opacity: 0;
+              filter: blur(2px);
+            }
+        }
+
+        @keyframes drop1 {
+            0% {
+              transform: translateY(0) translateX(0);
+            }
+            10% {
+              transform: translateY(-25px) translateX(-10px);
+            }
+            20% {
+              transform: translateY(-50px) translateX(-20px) rotate(-5deg);
+              opacity: 0.5;
+            }
+            30% {
+              transform: translateY(-60px) translateX(-30px) rotate(-5deg);
+            }
+
+            50% {
+                transform: translateY(-60px) translateX(-35px) rotate(0deg);
+            }
+
+            100% {
+              transform: translateY(100%) translateX(-40px);
+              opacity: 0;
+              filter: blur(2px);
+            }
+        }
+
+        @keyframes drop2 {
+            0% {
+              transform: translateY(0);
+            }
+            10% {
+              transform: translateY(-25px);
+            }
+            20% {
+              transform: translateY(-50px);
+              opacity: 0.5;
+            }
+            30% {
+              transform: translateY(-60px);
+            }
+
+            50% {
+                transform: translateY(-60px);
+            }
+
+            100% {
+              transform: translateY(100%);
+              opacity: 0;
+              filter: blur(2px);
             }
         }
     </style>
+    <script>
+        var clientX = 0; 
+        var clientY = 0;
+        var i = 0;
+        var wallpaper = "";
+        document.addEventListener("mousemove", function(e){
+            clientX = e.clientX - 26;
+            clientY = e.clientY - 14;
+        })
+        document.querySelectorAll('.imgfile').forEach(function(e){
+            e.addEventListener('click', function(){
+                document.body.insertAdjacentHTML("afterbegin", `
+                    <p id="soon" style="top: ${clientY}px; left: ${clientX}px;" class="drop${Math.floor(Math.random() * 3)}">soon</p>  
+                `)
+                setWallpaper(e.textContent)
+            }) 
+        })
+        function setWallpaper(str){
+            if (str !== wallpaper){
+                var url = ""
+                document.getElementById("root").classList.add("wallpaper");
+                switch(str){
+                    case " My wallpapers":
+                        url = 'https://my-wallpapers.github.io/my-wallpapers/Stop.jpg';
+                    break;
+                    case " From internet":
+                        url = 'https://my-wallpapers.github.io/from-internet/wallpaper2.jpg';
+                    break;
+                    case " Windows":
+                        url = 'https://my-wallpapers.github.io/windows/original/windows-11/Screen/img102.jpg';
+                    break;
+                    case " Youtubers":
+                        url = 'https://my-wallpapers.github.io/youtubers/dm/Myslivets.RGB_Strip_16x9.jpg';
+                    break;
+                }
+                console.log(url)
+                if (document.getElementById('wall').classList.contains('show')){
+                    document.getElementById('wall2').src = url;
+                    document.getElementById('wall2').onload = function(){document.getElementById('wall2').classList.add('show'); document.getElementById('wall').classList.remove('show')};
+                } else if (document.getElementById('wall2').classList.contains('show')) {
+                    document.getElementById('wall').src = url;
+                    document.getElementById('wall').onload = function(){document.getElementById('wall').classList.add('show'); document.getElementById('wall2').classList.remove('show')};
+                } else {
+                    document.getElementById('wall').src = url;
+                    document.getElementById('wall').onload = function(){document.getElementById('wall').classList.add('show')};
+                }
+                wallpaper = str;
+            }
+        }
+    </script>
 </html>
