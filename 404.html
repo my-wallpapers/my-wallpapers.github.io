@@ -2,21 +2,37 @@
     <head>
         <title>404</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" href="icons/faviconerr.ico">
+        <link rel="shortcut icon" href="/icons/faviconerr.ico">
     </head>
     <body>
         <div class="all"></div>
-        <img class="bgimg" src="https://my-wallpapers.github.io/windows/original/windows-vista/Black%20and%20White/img3.jpg" onload="show()">
+        <img class="bgimg" src="https://my-wallpapers.github.io/from-internet/wallpaper2.jpg" onload="show()">
         <div class="bg"></div>
         <div class="content" style="display: block; text-align: center;">
         <h1>404: object not found.</h1>
-        <a href="/">Back</a>
+        <a href="/">Go back</a>
+        <div id="nsc">
+            <div id="newsyntax">
+                <h1>Note: My wallpapers has new syntax.</h1>
+                <div class="grid">
+                    <div>
+                        <h1><b>/windows/windows.html</b></h1>
+                        <h2>❌</h2>
+                    </div>
+                    <div>
+                        <h1><b>/windows/</b></h1>
+                        <h2>✅</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
     </body>
     <style>
         * {
             padding: 0;
             margin: 0;
+            overflow: hidden;
         }
 
         body {
@@ -44,7 +60,7 @@
             top: 0;
             left: 0;
             filter: opacity(1);
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(10px);
         }
     
         .bgimg {
@@ -81,8 +97,7 @@
         }
 
         @keyframes bg {
-            from {filter: opacity(1);}
-            to {filter: opacity(0.7);}
+            to {background-color: rgba(0, 0, 0, 0.7);}
         }
 
         @keyframes fade {
@@ -95,6 +110,27 @@
                 font-size: 30px;
             }
         }
+
+        #nsc {
+            filter: opacity(0);
+            width: 100%;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            animation: nscfade 250ms linear forwards;
+            animation-delay: 500ms;
+        }
+
+        .grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        @keyframes nscfade {
+            from {filter: opacity(0); transform: translateY(120px);}
+            to {filter: opacity(1);}
+        }
     </style>
     <script>
         setTimeout(function(){
@@ -103,6 +139,12 @@
 
         function show(){
             document.querySelector('.bg').classList.add('animbg');
+        }
+
+        if (localStorage.getItem('nscshowed') == null){
+            localStorage.setItem('nscshowed', 'true');
+        } else {
+            document.getElementById('nsc').remove();
         }
     </script>
 </html>

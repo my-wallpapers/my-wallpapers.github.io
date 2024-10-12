@@ -106,11 +106,39 @@ hr {
 }
 
 .preview {
+    border: 2px inset green;
     background: black;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
+}
+
+.list button {
+    padding: 2px 10px;
+    color: rgb(0, 255, 0);
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    outline: 0;
+}
+
+.list button:hover {
+    background: rgb(0, 255, 0);
+    color: black;
+}
+
+.list button:active {
+    background: rgb(0, 230, 0);
+    color: black;
+}
+
+#input {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 0;
+    outline: 0;
+    padding: 2px;
+    margin-right: 5px;
 }
 
 .selected {
