@@ -146,3 +146,115 @@ hr {
     color: black;
 }
 
+.importantThing {
+    position: fixed;
+    right: 10;
+    top: 10;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    cursor: pointer;
+    user-select: none;
+    color: rgb(0, 255, 0);
+    padding: 8px;
+    width: 400px;
+    transition: background-color 250ms, border 250ms;
+}
+
+.importantThing:hover {
+    border: 1px solid rgba(128, 128, 128, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 1140px) {
+    .importantThing {
+        width: calc(100vw - 20px);
+        bottom: 10;
+        top: auto;
+    }
+}
+
+.importantThing.hide, .modalThing.hide {
+    animation: thinghide forwards ease-out 100ms;
+    pointer-events: none;
+}
+
+@keyframes thinghide {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.modalThing {
+    position: fixed;
+    top: 10;
+    left: 10;
+    width: calc(100vw - 20px);
+    height: calc(100vh - 20px);
+    z-index: 9999;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 8px;
+    color: rgb(0, 255, 0);
+    animation: thingshow 250ms ease-out forwards;
+}
+
+.modalThing .modalText {
+    max-height: 100%;
+    overflow-y: auto;
+}
+
+.modalText p, .modalText ul {
+    margin-bottom: 20px;
+}
+
+.modalText hr {
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid gray;
+}
+
+.modalText a {
+    color: rgb(0, 255, 0);
+}
+
+.modalText a:hover {
+    color: rgb(0, 175, 0);
+}
+
+.modalText::-webkit-scrollbar {
+    width: 7px;
+}
+
+.modalText::-webkit-scrollbar-thumb {
+    background: rgb(0, 255, 0);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+}
+
+.modalText::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+.modalText button {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: rgb(0, 255, 0);
+    border: 0;
+    outline: 0;
+    height: 40px;
+    font-family: 'consolas', monospace;
+    font-size: 16px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.modalText button:hover {
+    background-color: rgb(0, 255, 0);
+    color: black;
+}
+
+@keyframes thingshow {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
